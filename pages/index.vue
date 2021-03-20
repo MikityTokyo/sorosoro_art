@@ -39,8 +39,12 @@
         :slug="article.slug"
       ></card-list
     ></v-col>
-    <v-col
-      ><v-btn v-if="ListItems.length - count >= 0" @click="isMore"
+    <v-col align="center"
+      ><v-btn
+        v-if="ListItems.length - count >= 0"
+        outlined
+        color="blue"
+        @click="isMore"
         >▽もっと見る（残り{{ publicArticles.length - count }}件）</v-btn
       ></v-col
     >

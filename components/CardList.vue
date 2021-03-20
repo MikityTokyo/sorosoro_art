@@ -1,9 +1,7 @@
 <template>
   <nuxt-link :to="path" class="text-decoration-none">
     <v-card outlined class="scroll-y">
-      <v-card-title class="h4" style="overflow-y: visible; height: 100px"
-        >#{{ slug }} {{ title }}</v-card-title
-      >
+      <v-card-title class="h4">#{{ slug }} {{ title }}</v-card-title>
       <v-card-subtitle>{{ guestname }}</v-card-subtitle>
     </v-card>
   </nuxt-link>
