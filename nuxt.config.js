@@ -36,7 +36,11 @@ export default {
         content: 'アートテラー・とに～のそろそろ美術の話を...',
       },
       { hid: 'og:type', property: 'og:type', content: 'website' },
-      { hid: 'og:url', property: 'og:url', content: 'サイトURL' },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: '	https://sorosoro-art.vercel.app/',
+      },
       {
         hid: 'og:title',
         property: 'og:title',
@@ -48,7 +52,11 @@ export default {
         content:
           'アートテラー・とに～がアートに関わる方をゲストにお迎えしてトークする不定期配信のPodcast番組です。',
       },
-      { hid: 'og:image', property: 'og:image', content: 'サイトURL' },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: '	https://sorosoro-art.vercel.app/og_image.png',
+      },
 
       { hid: 'fb:app_id', property: 'fb:app_id', content: 'App-ID' },
       {
