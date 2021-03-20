@@ -125,7 +125,7 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   sitemap: {
-    hostname: process.env.BASE_URL, // https://www.yoursite.com
+    hostname: 'https://www.yoursite.com',
     routes() {
       return getRoutes()
     },
