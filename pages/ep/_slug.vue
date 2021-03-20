@@ -58,7 +58,7 @@ export default {
         {
           hid: 'og:url',
           property: 'og:url',
-          content: 'https://あとで' + this.article.path,
+          content: `https://sorosoro-art.vercel.app/${this.article.path}`,
         },
         {
           hid: 'og:title',
