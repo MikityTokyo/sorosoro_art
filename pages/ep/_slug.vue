@@ -78,7 +78,7 @@ export default {
 
 <style>
 .nuxt-content h1 {
-  margin-top: 50px;
+  margin-top: 30px;
   font-size: 1.5rem !important;
   font-weight: 400;
   line-height: 2rem;
@@ -88,5 +88,9 @@ export default {
 
 .nuxt-content a {
   text-decoration: none;
+}
+
+.nuxt-content li {
+  line-height: 175%;
 }
 </style>
