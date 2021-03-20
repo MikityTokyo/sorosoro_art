@@ -5,7 +5,7 @@
       <p class="text-center">
         番組へのお問い合わせ、ゲストやテーマのリクエストはこちらまで
       </p>
-      <v-btn rounded block color="primary" @click="externalLink">
+      <v-btn class="mb-6" rounded block color="primary" @click="externalLink">
         お問い合わせ・リクエスト
       </v-btn>
     </v-col>
