@@ -1,5 +1,5 @@
 <template>
-  <v-parallax height="250" src="/HeroImage.jpg">
+  <v-parallax height="250" src="/heroimage.jpg">
     <v-row align="center" justify="center">
       <v-col class="text-center" cols="12">
         <div>
