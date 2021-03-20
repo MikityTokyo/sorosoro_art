@@ -92,5 +92,6 @@ export default {
 
 .nuxt-content li {
   line-height: 175%;
+  padding: 3px 0;
 }
 </style>
