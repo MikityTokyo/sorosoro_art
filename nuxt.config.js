@@ -125,7 +125,7 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   sitemap: {
-    hostname: 'https://www.yoursite.com',
+    hostname: 'https://sorosoro-art.vercel.app/',
     routes() {
       return getRoutes()
     },
