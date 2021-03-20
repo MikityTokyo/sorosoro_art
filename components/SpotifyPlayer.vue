@@ -1,8 +1,9 @@
 <template>
-  <v-row>
+  <v-row align="center" justify="center">
     <iframe
       :src="spotifyLink"
-      width="100%"
+      marginwidth="10"
+      width="95%"
       height="232"
       frameborder="0"
       allowtransparency="true"

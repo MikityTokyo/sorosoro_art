@@ -24,8 +24,12 @@
         <request-form></request-form>
       </v-container>
     </v-main>
-    <v-footer :absolute="!fixed" app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+    <v-footer padless
+      ><v-col class="text-center" cols="12">
+        &copy;{{ new Date().getFullYear() }} —
+        <a href="https://ameblo.jp/artony/" target="_blank">Art Teller Tony</a>
+        - All Rights Reserved.
+      </v-col>
     </v-footer>
   </v-app>
 </template>
