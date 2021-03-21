@@ -86,6 +86,7 @@ export default {
     '@nuxtjs/vuetify',
     '@nuxtjs/google-analytics',
     '@nuxtjs/sitemap',
+    'nuxt-clipboard2',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

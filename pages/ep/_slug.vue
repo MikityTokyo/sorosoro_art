@@ -18,17 +18,25 @@
         <nuxt-content :document="article" />
       </article>
     </v-col>
+    <v-col> <request-form></request-form> </v-col>
+    <v-col cols="12" align="center" class="mb-6"
+      ><v-btn outlined color="blue" @click="copy"
+        >タイトルとURLをコピーする</v-btn
+      ></v-col
+    >
   </v-row>
 </template>
 
 <script>
 import SpotifyPlayer from '../../components/SpotifyPlayer'
 import PodcastBunner from '../../components/PodcastBunner'
+import RequestForm from '../../components/RequestForm'
 
 export default {
   components: {
     'spotify-player': SpotifyPlayer,
     'podcast-bunner': PodcastBunner,
+    'request-form': RequestForm,
   },
   async asyncData({ $content, params }) {
     const article = await $content('ep', params.slug).fetch()
@@ -36,9 +44,7 @@ export default {
     return { article }
   },
   data() {
-    return {
-      loadapplelink: this.article,
-    }
+    return {}
   },
   head() {
     return {
@@ -72,6 +78,14 @@ export default {
         },
       ],
     }
+  },
+  methods: {
+    copy() {
+      const str =
+        this.article.title +
+        `https://sorosoro-art.vercel.app${this.article.path}`
+      this.$copyText(str)
+    },
   },
 }
 </script>

@@ -21,13 +21,17 @@
     <v-main>
       <v-container>
         <nuxt />
-        <request-form></request-form>
       </v-container>
     </v-main>
     <v-footer padless
       ><v-col class="text-center" cols="12">
         &copy;{{ new Date().getFullYear() }} —
-        <a href="https://ameblo.jp/artony/" target="_blank">Art Teller Tony</a>
+        <a
+          href="https://ameblo.jp/artony/"
+          target="_blank"
+          class="text-decoration-none"
+          >Art Teller Tony</a
+        >
         - All Rights Reserved.
       </v-col>
     </v-footer>
@@ -35,12 +39,8 @@
 </template>
 
 <script>
-import RequestForm from '../components/RequestForm'
-
 export default {
-  components: {
-    'request-form': RequestForm,
-  },
+  components: {},
   data() {
     return {
       title: 'そろそろ美術の話を...',

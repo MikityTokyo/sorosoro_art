@@ -8,6 +8,7 @@
       <p>
         アートテラー・とに～がアートに関わる方をゲストにお迎えしてトークする不定期配信のPodcast番組です。<br />
         番組の感想は、<a
+          class="text-decoration-none"
           href="https://twitter.com/search?q=%23%E3%81%9D%E3%82%8D%E3%81%9D%E3%82%8D%E7%BE%8E%E8%A1%93%E3%81%AE%E8%A9%B1%E3%82%92"
           target="_blank"
           >#そろそろ美術の話を</a
@@ -48,6 +49,7 @@
         >▽もっと見る（残り{{ publicArticles.length - count }}件）</v-btn
       ></v-col
     >
+    <v-col cols="12"> <request-form></request-form> </v-col>
   </v-row>
 </template>
 
@@ -56,6 +58,7 @@ import HeroImage from '../components/HeroImage'
 import SpotifyPlayer from '../components/SpotifyPlayer'
 import PodcastBunner from '../components/PodcastBunner'
 import CardList from '../components/CardList'
+import RequestForm from '../components/RequestForm'
 
 export default {
   components: {
@@ -63,6 +66,7 @@ export default {
     'spotify-player': SpotifyPlayer,
     'podcast-bunner': PodcastBunner,
     'card-list': CardList,
+    'request-form': RequestForm,
   },
   async asyncData({ $content, params }) {
     const articles = await $content('ep')
