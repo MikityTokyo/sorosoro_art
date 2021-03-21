@@ -26,6 +26,11 @@ export default {
           'アートテラー・とに～がアートに関わる方をゲストにお迎えしてトークする不定期配信のPodcast番組です。',
       },
       {
+        hid: 'google-site-verification',
+        name: 'google-site-verification',
+        content: '0z0mqytBhPSS2W4rZsZ5K0XxK-_JyJ5dF1WPdpk6BJA',
+      },
+      {
         hid: 'keywords',
         name: 'keywords',
         content: 'アート,美術,ポッドキャスト,Podcast',
