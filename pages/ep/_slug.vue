@@ -14,7 +14,7 @@
     ></v-col>
     <v-col cols="12">
       <article>
-        <li>{{ article.discription }}</li>
+        <li>{{ article.description }}</li>
         <nuxt-content :document="article" />
       </article>
     </v-col>
