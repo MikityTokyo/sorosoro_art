@@ -87,6 +87,12 @@ export default {
       count: 6,
     }
   },
+  head() {
+    return {
+      title: 'アートテラー・とに～のそろそろ美術の話を...',
+      titleTemplate: '',
+    }
+  },
   computed: {
     publicArticles() {
       return this.articles.filter(function (article) {
