@@ -19,16 +19,14 @@
       </article>
     </v-col>
     <v-col cols="12">
-      <li>
-        番組に関するツイートは、
-        <a
-          class="text-decoration-none"
-          href="https://twitter.com/search?q=%23%E3%81%9D%E3%82%8D%E3%81%9D%E3%82%8D%E7%BE%8E%E8%A1%93%E3%81%AE%E8%A9%B1%E3%82%92"
-          target="_blank"
-          >#そろそろ美術の話を</a
-        >
-        でも投稿されています。ぜひご覧ください。
-      </li>
+      番組に関する感想は、
+      <a
+        class="text-decoration-none"
+        href="https://twitter.com/search?q=%23%E3%81%9D%E3%82%8D%E3%81%9D%E3%82%8D%E7%BE%8E%E8%A1%93%E3%81%AE%E8%A9%B1%E3%82%92"
+        target="_blank"
+        >#そろそろ美術の話を</a
+      >
+      で投稿されています。ぜひご覧ください。
       <v-col> <request-form></request-form> </v-col>
       <v-col cols="12" align="center" class="mb-6"
         ><v-btn outlined color="blue" @click="copy, (snackbar = true)">{{
