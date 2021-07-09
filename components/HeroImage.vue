@@ -1,10 +1,14 @@
 <template>
-  <v-row align="center" justify="center">
-    <nuxt-img
-      src="/HeroImage.png"
-      sizes="xs: 95vw sm: 95vw  md:95vw  lg: 95vw xl: 95vw"
-    />
-  </v-row>
+  <v-parallax height="250" src="/heroimage.jpg">
+    <v-row align="center" justify="center">
+      <v-col class="text-center" cols="12">
+        <div>
+          <h1 :class="responsiveSubtitleClass">{{ subTitle }}</h1>
+          <h1 :class="responsiveTitleClass">{{ mainTitle }}</h1>
+        </div>
+      </v-col>
+    </v-row>
+  </v-parallax>
 </template>
 
 <script>

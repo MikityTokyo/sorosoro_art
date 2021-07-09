@@ -92,7 +92,6 @@ export default {
     '@nuxtjs/google-analytics',
     '@nuxtjs/sitemap',
     'nuxt-clipboard2',
-    '@nuxt/image',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
