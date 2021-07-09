@@ -28,23 +28,7 @@
       >
       で投稿されています。ぜひご覧ください。
       <v-col> <request-form></request-form> </v-col>
-      <v-col cols="12" align="center" class="mb-6"
-        ><v-btn outlined color="blue" @click="copy, (snackbar = true)">{{
-          buttontext
-        }}</v-btn></v-col
-      >
     </v-col>
-    <div class="text-center">
-      <v-snackbar v-model="snackbar" :timeout="timeout">
-        {{ text }}
-
-        <template #action="{ attrs }">
-          <v-btn color="blue" text v-bind="attrs" @click="snackbar = false">
-            Close
-          </v-btn>
-        </template>
-      </v-snackbar>
-    </div>
   </v-row>
 </template>
 
@@ -64,14 +48,7 @@ export default {
 
     return { article }
   },
-  data() {
-    return {
-      buttontext: 'タイトルとURLをコピーする',
-      snackbar: false,
-      text: 'コピーしました！',
-      timeout: 1500,
-    }
-  },
+
   head() {
     return {
       title: this.article.title,
@@ -105,14 +82,7 @@ export default {
       ],
     }
   },
-  methods: {
-    copy() {
-      const str =
-        this.article.title +
-        `https://sorosoro-art.vercel.app${this.article.path}`
-      this.$copyText(str)
-    },
-  },
+  methods: {},
 }
 </script>
 
