@@ -26,29 +26,78 @@
       <podcast-bunner></podcast-bunner>
     </v-col>
     <v-col cols="12"> <h1 class="headline">Past Episodes</h1></v-col>
-    <v-col
-      v-for="article of ListItems"
-      :key="article.path"
-      cols="12"
-      xs="12"
-      md="6"
-    >
-      <card-list
-        :path="article.path"
-        :title="article.title"
-        :guestname="article.guestname"
-        :slug="article.slug"
-      ></card-list
-    ></v-col>
-    <v-col align="center"
-      ><v-btn
-        v-if="ListItems.length - count >= 0"
-        outlined
-        color="blue"
-        @click="isMore"
-        >▽もっと見る（残り{{ publicArticles.length - count }}件）</v-btn
-      ></v-col
-    >
+
+    <v-col cols="12">
+      <v-tabs v-model="tab" fixed-tabs>
+        <v-tab>Guest</v-tab>
+        <v-tab>Special</v-tab>
+      </v-tabs>
+      <v-tabs-items v-model="tab">
+        <v-tab-item>
+          <v-container>
+            <v-row>
+              <v-col
+                v-for="article of gtListItems"
+                :key="article.path"
+                cols="12"
+                xs="12"
+                md="6"
+              >
+                <card-list
+                  :path="article.path"
+                  :title="article.title"
+                  :guestname="article.guestname"
+                  :slug="article.slug"
+                ></card-list
+              ></v-col>
+              <v-col align="center"
+                ><v-btn
+                  v-if="gtListItems.length - gtCount >= 0"
+                  outlined
+                  color="blue"
+                  @click="isMoreGt"
+                  >▽もっと見る（残り{{
+                    gtPublicArticles.length - gtCount
+                  }}件）</v-btn
+                ></v-col
+              >
+            </v-row>
+          </v-container>
+        </v-tab-item>
+        <v-tab-item>
+          <v-container>
+            <v-row>
+              <v-col
+                v-for="article of spListItems"
+                :key="article.path"
+                cols="12"
+                xs="12"
+                md="6"
+              >
+                <card-list
+                  :path="article.path"
+                  :title="article.title"
+                  :guestname="article.guestname"
+                  :slug="article.slug"
+                ></card-list
+              ></v-col>
+              <v-col align="center"
+                ><v-btn
+                  v-if="spListItems.length - gtCount >= 0"
+                  outlined
+                  color="blue"
+                  @click="isMoreSp"
+                  >▽もっと見る（残り{{
+                    gtPublicArticles.length - spCount
+                  }}件）</v-btn
+                ></v-col
+              >
+            </v-row></v-container
+          ></v-tab-item
+        >
+      </v-tabs-items>
+    </v-col>
+
     <v-col cols="12"> <request-form></request-form> </v-col>
   </v-row>
 </template>
@@ -69,13 +118,19 @@ export default {
     'request-form': RequestForm,
   },
   async asyncData({ $content, params }) {
-    const articles = await $content('ep')
-      .only(['title', 'guestname', 'slug', 'path', 'isPublic'])
+    const gtArticles = await $content('ep')
+      .only(['title', 'guestname', 'slug', 'path', 'type', 'isPublic'])
+      .where({ type: 'guest' })
       .sortBy('createdAt', 'desc')
       .fetch()
-
+    const spArticles = await $content('ep')
+      .only(['title', 'guestname', 'slug', 'path', 'type', 'isPublic'])
+      .where({ type: 'special' })
+      .sortBy('createdAt', 'desc')
+      .fetch()
     return {
-      articles,
+      gtArticles,
+      spArticles,
     }
   },
   data() {
@@ -84,7 +139,9 @@ export default {
       maintitle: 'そろそろ美術の話を...',
       spotifylink:
         'https://open.spotify.com/embed-podcast/show/7fuxu5V9ZAHNjrkCcevDww',
-      count: 6,
+      gtCount: 6,
+      spCount: 6,
+      tab: null,
     }
   },
   head() {
@@ -94,19 +151,31 @@ export default {
     }
   },
   computed: {
-    publicArticles() {
-      return this.articles.filter(function (article) {
+    gtPublicArticles() {
+      return this.gtArticles.filter(function (article) {
         return article.isPublic
       })
     },
-    ListItems() {
-      const list = this.publicArticles
-      return list.slice(0, this.count)
+    gtListItems() {
+      const list = this.gtPublicArticles
+      return list.slice(0, this.gtCount)
+    },
+    spPublicArticles() {
+      return this.spArticles.filter(function (article) {
+        return article.isPublic
+      })
+    },
+    spListItems() {
+      const list = this.spPublicArticles
+      return list.slice(0, this.spCount)
     },
   },
   methods: {
-    isMore() {
-      this.count += 8
+    isMoreGt() {
+      this.gtCount += 8
+    },
+    isMoreSp() {
+      this.spCount += 8
     },
   },
 }
